@@ -18,6 +18,10 @@ def divide(a, b):
         return "エラー: 0で割ることはできません"
     return a / b
 
+def power(a, b):
+    # べき乗
+    return a ** b
+
 def main():
     print("===== 電卓プログラム =====")
     print("演算子を選んでください:")
@@ -25,18 +29,19 @@ def main():
     print("  2: 引き算 (-)")
     print("  3: 掛け算 (*)")
     print("  4: 割り算 (/)")
+    print("  5: べき乗 (**)")
     print("  q: 終了")
     print("=========================")
 
     while True:
         # メニューの選択
-        choice = input("\n演算子 (1/2/3/4/q): ").strip()
+        choice = input("\n演算子 (1/2/3/4/5/q): ").strip()
 
         if choice == "q":
             print("電卓を終了します。")
             break
 
-        if choice not in ("1", "2", "3", "4"):
+        if choice not in ("1", "2", "3", "4", "5"):
             print("1〜4またはqを入力してください。")
             continue
 
@@ -61,6 +66,9 @@ def main():
         elif choice == "4":
             result = divide(a, b)
             symbol = "/"
+        elif choice == "5":
+            result = power(a, b)
+            symbol = "**"
 
         print(f"結果: {a} {symbol} {b} = {result}")
 
