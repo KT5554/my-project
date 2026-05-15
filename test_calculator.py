@@ -1,4 +1,4 @@
-from calculator import add, subtract, multiply, divide
+from calculator import add, subtract, multiply, divide, power
 
 tests = [
     ("add(3, 4)",        add(3, 4),        7),
@@ -10,6 +10,10 @@ tests = [
     ("divide(10, 2)",   divide(10, 2),    5.0),
     ("divide(7, 2)",    divide(7, 2),     3.5),
     ("divide(5, 0)",    divide(5, 0),     "エラー: 0で割ることはできません"),
+    ("power(2, 10)",   power(2, 10),    1024),
+    ("power(3, 3)",    power(3, 3),     27),
+    ("power(5, 0)",    power(5, 0),     1),
+    ("power(2, -1)",   power(2, -1),    0.5),
 ]
 
 all_pass = True
